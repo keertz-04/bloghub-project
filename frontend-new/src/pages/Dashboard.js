@@ -6,7 +6,7 @@ function Dashboard() {
   const [data, setData] = useState({ title:"", content:"", author:"" });
 
   const loadBlogs = () => {
-    axios.get("http://localhost:5000/api/blog/all").then(res => setBlogs(res.data));
+    axios.get("/api/blog/all").then(res => setBlogs(res.data));
   };
 
   useEffect(() => {
@@ -14,12 +14,12 @@ function Dashboard() {
   }, []);
 
   const addBlog = async () => {
-    await axios.post("http://localhost:5000/api/blog/add", data);
+    await axios.post("/api/blog/add", data);
     loadBlogs();
   };
 
   const deleteBlog = async (id) => {
-    await axios.delete(`http://localhost:5000/api/blog/delete/${id}`);
+    await axios.delete(`/api/blog/delete/${id}`);
     loadBlogs();
   };
 

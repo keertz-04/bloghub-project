@@ -7,7 +7,7 @@ function Home() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/blog/all")
+    axios.get("/api/blog/all")
       .then(res => setBlogs(res.data));
   }, []);
 

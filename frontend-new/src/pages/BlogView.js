@@ -7,7 +7,7 @@ function BlogView() {
   const [blog, setBlog] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/blog/${id}`)
+    axios.get(`/api/blog/${id}`)
       .then(res => setBlog(res.data));
   }, [id]);
 
